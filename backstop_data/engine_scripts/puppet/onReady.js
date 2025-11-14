@@ -52,6 +52,14 @@ module.exports = async (page, scenario) => {
 
         calendarElement.classList.remove('calendar--month-length-31');
         calendarElement.classList.add('calendar--month-length-29');
+
+        const daysToHide = calendarElement.querySelectorAll(
+          '.calendar__day:nth-child(n + 30)'
+        );
+
+        daysToHide.forEach(day => {
+          day.style.display = 'none';
+        });
       });
 
       await page.waitForSelector('.calendar--month-length-29');
