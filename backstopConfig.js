@@ -12,7 +12,7 @@ const basic = {
     'h1',
   ],
   misMatchThreshold: 0.5,
-  referenceUrl: basicScenario.referenceUrl + '/calendar/',
+  referenceUrl: `${basicScenario.referenceUrl}/calendar/`,
 };
 
 const config = {

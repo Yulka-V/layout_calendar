@@ -19,6 +19,12 @@ $columns-width: $columns-count * $day-size;
 $gap-width: ($columns-count - 1) * $gap-size;
 $calendar-width: $columns-width + $gap-width + 2 * $calendar-padding;
 
+:root {
+  --calendar-hover-shift: #{$hover-shift};
+}
+
+$hover-shift-var: var(--calendar-hover-shift, #{$hover-shift});
+
 *,
 *::before,
 *::after {
@@ -82,7 +88,7 @@ body {
 
   &:hover {
     background-color: $hover-color;
-    transform: translateY(-$hover-shift);
+    transform: translateY(calc(-1 * #{$hover-shift-var}));
     cursor: pointer;
   }
 
